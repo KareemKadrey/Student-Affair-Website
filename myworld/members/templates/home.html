@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title>Home page</title>
+    <link rel="stylesheet" href="{% static 'CSS/home.css'%}">
+</head>
+    <body>
+      <div id="inline" class="nav-list">
+        <div class="one"><a href ="{% url 'home' %}" >Home</a></div>
+       
+        <div class="two">
+          <a href="{% url 'add' %}">Add New Student</a>
+        </div>
+ <div class="three">
+  <a href="{% url 'Active' %}">Active/Inactive Students</a>
+ 
+ </div>
+        <div class="five">
+          <a href="{% url 'index' %}">View Students Data</a>
+          
+          
+        </div>
+
+        <div class="seven">
+          <a href="{%url 'start'%}">Rechoose Website</a>
+        </div>
+      </div>
+      <div class="text-box">
+        <h1>Welcome in the student affairs website</h1>
+
+        <p>
+          This is your home page. If you want to go to any page from the above
+          click on it directly,<br />
+          and you will be directed to the page you clicked on.
+        </p>
+      </div>
+    </body>
+  </head>
+</html>

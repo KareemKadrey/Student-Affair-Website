@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        margin: 0ch;
+      }
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: sticky;
+        margin-top: 0;
+        cursor: pointer;
+        margin-left: auto;
+      }
+
+      .background {
+        background: rgb(19, 19, 85);
+        background-blend-mode: darken;
+        background-size: cover;
+        margin-top: 0;
+      }
+
+      .nav-list {
+        width: auto;
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-list li {
+        list-style: none;
+        padding: 20px 30px;
+      }
+
+      .nav-list li a {
+        text-decoration: none;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 20px;
+        color: white;
+        padding: auto;
+      }
+
+      .nav-list li a:hover {
+        color: gold;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 80%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+      }
+
+      button {
+        background-color: rgb(19, 19, 85);
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+      .first {
+        padding: 18px;
+        width: 10px;
+        margin: 20px;
+        background-color: rgb(255, 255, 255);
+      }
+      #inline {
+        width: 100%;
+        height: 10px;
+        display: flex;
+        text-decoration: none;
+      }
+      .one,
+      .two,
+      .three,
+      .four,
+      .five,
+      .six,
+      .seven {
+        width: 40%;
+        height: 35px;
+        margin: 10px;
+      }
+      a,
+      div {
+        color: black;
+        text-decoration: none;
+        font-size: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar background">
+      <ul class="nav-list">
+        <div class="logo"></div>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <li><a href="{% url 'home' %}">Home</a></li>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <li><a href="{% url 'add' %}">Add new student</a></li>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <li><a href="{% url 'Active' %}">Active/Inactive Students</a></li>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <li><a href="{% url 'index' %}">View Students Data</a></li>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <li><a href="{% url 'start' %}">Rechoose Website</a></li>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      </ul>
+      <br />
+    </nav>
+    <br />
+    <h1>Add New Student</h1>
+    <br />
+    <div class="container">
+      <form action="addrecord/" method="post">
+        {% csrf_token %} Name:<br />
+        <input name="Name" />
+        <br /><br />
+        ID:<br />
+        <input name="ID" />
+        <br /><br />
+        Gpa:<br />
+        <input name="Gpa" />
+        <br /><br />
+        Level:<br />
+        <select name="Level">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        <br /><br />
+        Department:<br />
+        <select name="Department">
+          <option value="IS">IS</option>
+          <option value="DS">DS</option>
+          <option value="AI">AI</option>
+          <option value="IT">IT</option>
+          <option value="CS">CS</option>
+        </select>
+        <br /><br />
+        Status:<br />
+        <select name="Status">
+          <option value="Active">Active</option>
+          <option value="Inactive">Inactive</option>
+        </select>
+        <br /><br />
+        Gender:<br />
+        <select name="Gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        <br /><br />
+        Phone:<br />
+        <input name="Phone" />
+        <br /><br />
+        Email:<br />
+        <input name="Email" />
+        <br /><br />
+        Birth Date:<br />
+        <input name="Birth_Date" placeholder="YYYY-MM-DD" />
+        <br /><br />
+        <button type="submit" value="Submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
